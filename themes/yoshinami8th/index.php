@@ -34,7 +34,7 @@
                           </div>
                         <?php endif; ?>
                     </div>
-                    <div class="post-content my-6 grid gap-2">
+                    <div class="post-content mt-6 grid gap-2">
                         <?php the_content(); ?>
                     </div>
                     <div class="post-meta text-right">
