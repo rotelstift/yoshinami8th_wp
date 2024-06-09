@@ -9,7 +9,7 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-  <div class="w-full bg-neutral-300 text-neutral-700">
+  <div class="w-full min-h-screen flex flex-col bg-neutral-300 text-neutral-700">
     <header class="mb-8">
         <div class="container px-4 lg:w-4/5 lg:max-w-screen-md lg:mx-auto">
             <h1 class="text-4xl lg:text-6xl"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
@@ -20,7 +20,7 @@
         </div>
     </header>
 
-    <main>
+    <main class="flex-grow">
         <div class="container grid gap-8 px-4 lg:w-4/5 lg:max-w-screen-md lg:mx-auto">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                 <article <?php post_class(); ?>>
@@ -34,15 +34,15 @@
                           </div>
                         <?php endif; ?>
                     </div>
-                    <div class="post-meta">
+                    <div class="post-meta mb-8">
                         <span><?php the_time('m-d Y'); ?></span> |
                         <span><?php the_author(); ?></span>
                     </div>
                     <div class="post-tags">
                         <?php the_tags('<span>Section: </span>', ', ', ''); ?>
                     </div>
-                    <div class="post-content">
-                        <?php the_excerpt(); ?>
+                    <div class="post-content grid gap-4">
+                        <?php the_content(); ?>
                     </div>
                 </article>
             <?php endwhile; ?>
@@ -63,6 +63,11 @@
 
     <footer>
         <div class="container px-4 text-center lg:w-4/5 lg:max-w-screen-md lg:mx-auto">
+          <div class="grid grid-cols-3 gap-8 content-between">
+            <p><a href="https://www.pixiv.net/users/3864757">pixiv</a></p>
+            <p><a href="https://x.com/yoshinami8th">X</a></p>
+            <p><a href="https://rotelstift.booth.pm/">BOOTH</a></p>
+          </div>
             <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
         </div>
     </footer>
