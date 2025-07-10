@@ -19,18 +19,15 @@
 
                 <div class="group relative">
                     <label for="toggle" class="peer">
-                        <input type="checkbox" id="toggle" class="peer" />
+                        <input type="checkbox" id="toggle" class="peer opacity-0" />
 
-                       <!-- <a href="#menu-nav" class="peer-focus:hidden fixed top-4 right-4 z-10">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                            </svg>
-                        </a>
-                        <a href="#" class="hidden focus:block fixed top-4 right-4 z-10">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </a> -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 peer-checked:hidden fixed top-4 right-4" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden peer-checked:block fixed top-4 right-4" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+
                         <nav id="menu-nav" class="hidden peer-checked:block fixed top-16 right-0 bg-zinc-900/80 w-2/3 max-w-xs h-lvh shadow-lg p-4 space-y-4">
                             <?php wp_nav_menu(array(
                                 'theme_location' => 'primary',
