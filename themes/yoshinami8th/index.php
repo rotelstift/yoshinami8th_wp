@@ -57,15 +57,15 @@
 
     <main class="flex-grow relative">
         <?php if (!is_home()) : ?>
-            <h2 class="text-6xl font-bold text-center text-orange-400 h-auto sticky top-16 p-4 sm:top-32 bg-zinc-800"><?php the_tags(''); ?></h2>
+            <h2 class="text-6xl font-bold text-center text-orange-400 h-auto sticky top-16 p-4 sm:top-32 bg-zinc-800"><?php single_tag_title(); ?></h2>
         <?php endif; ?>
-        <div class="grid gap-4 grid-cols-1 place-items-center divide-dotted divide-orange-400 divide-y lg:w-4/5 lg:max-w-screen-md">
+        <div class="grid gap-4 grid-cols-1 place-items-center divide-dotted divide-orange-400 divide-y mx-auto lg:w-4/5 lg:max-w-screen-md">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                <article class="w-screen px-4">
+                <article class="w-full">
                     <h3 class="text-3xl my-4"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                    <div class="post-thumbnail justify-items-center">
+                    <div class="post-thumbnail">
                         <?php if (has_post_thumbnail()) : ?>
-                            <div class="w-3/4 sm:max-w-96">
+                            <div class="w-fit sm:max-w-96 mx-auto">
                                 <a href="<?php the_permalink(); ?>">
                                     <?php the_post_thumbnail('medium_large'); ?>
                                 </a>
