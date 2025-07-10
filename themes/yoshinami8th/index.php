@@ -11,7 +11,7 @@
 <body <?php body_class(['min-h-screen', 'bg-zinc-800', 'text-white', 'font-sans']); ?>>
 
     <header class="bg-zinc-900 p-4">
-        <div class="mx-auto grid grid-cols-2 sm:grid-rows-2 items-center text-center gap-4 sm:h-16 lg:w-4/5 lg:max-w-screen-md">
+        <div class="mx-auto grid grid-cols-2 sm:grid-cols-1 items-center text-center gap-4 lg:w-4/5 lg:max-w-screen-md">
             <h1 class="text-xl font-bold"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
             <!-- mobile menu -->
             <div class="sm:hidden grid grid-cols-1 relative">
