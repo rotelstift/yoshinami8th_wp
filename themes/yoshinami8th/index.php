@@ -72,7 +72,7 @@
                             </div>
                         <?php endif; ?>
                     </div>
-                    <div class="post-content mt-6 grid gap-2 w-full aspect-video [&_iframe]:w-full">
+                    <div class="post-content mt-6 grid gap-2 w-full has-[iframe]:aspect-video [&_iframe]:w-full">
                         <?php the_content(); ?>
                     </div>
                     <div class="post-meta text-right">
