@@ -11,23 +11,31 @@
 <body <?php body_class(['min-h-screen', 'bg-zinc-800', 'text-white', 'font-sans']); ?>>
 
     <header class="bg-zinc-900 p-4">
-        <div class="mx-auto grid grid-rows-2 items-center text-center gap-4 lg:w-4/5 lg:max-w-screen-md">
+        <div class="mx-auto grid grid-cols-2 sm:grid-rows-2 items-center text-center gap-4 sm:h-16 lg:w-4/5 lg:max-w-screen-md">
             <h1 class="text-xl font-bold"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
             <!-- mobile menu -->
-            <div class="group sm:hidden">
-                <button id="menu-button" class="block text-white focus:outline-none" aria-label="Menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 group-focus-within:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            <div class="sm:hidden grid grid-cols-1 relative">
+                <button id="close-button" class="text-white fixed top-4 right-4 z-0" aria-label="Close">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
-                <nav class="hidden group-focus-within:block fixed right-0 bg-zinc-900 w-2/3 max-w-xs h-auto shadow-lg p-4 space-y-4">
-                    <?php wp_nav_menu(array(
-                        'theme_location' => 'primary',
-                        'menu' => 'PageMenu',
-                        'container' => '',
-                        'menu_class' => '*:block hover:*:text-orange-400',
-                   )); ?>
-                </nav>
+
+                <div class="group z-10">
+                    <button id="menu-button" class="block text-white justify-self-end" aria-label="Menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 bg-zinc-900 group-focus-within:hidden" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                    <nav class="hidden group-focus-within:block fixed top-[60px] right-0 bg-zinc-900 w-2/3 max-w-xs h-auto shadow-lg p-4 space-y-4">
+                        <?php wp_nav_menu(array(
+                            'theme_location' => 'primary',
+                            'menu' => 'PageMenu',
+                            'container' => '',
+                            'menu_class' => '*:block hover:*:text-orange-400',
+                    )); ?>
+                    </nav>
+                </div>
             </div>
             <!-- desktop menu -->
             <nav class="hidden sm:block justify-center space-x-6 mt-2">
