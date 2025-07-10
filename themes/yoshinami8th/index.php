@@ -8,26 +8,32 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(['min-h-screen', 'bg-zinc-800', 'text-white', 'font-sans']); ?>>
+<body <?php body_class(['min-h-screen', 'bg-zinc-800', 'text-white', 'font-sans', 'max-w-screen']); ?>>
 
     <header class="bg-zinc-900 p-4 sticky top-0 z-10 h-16 sm:h-32">
         <div class="mx-auto grid grid-cols-2 sm:grid-cols-1 items-center text-center gap-4 lg:w-4/5 lg:max-w-screen-md">
             <h1 class="text-xl font-bold"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
             <!-- mobile menu -->
-            <div class="sm:hidden grid grid-cols-1 relative">
-                <button id="close-button" class="text-white fixed top-4 right-4 z-0" aria-label="Close">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
+            <div class="sm:hidden grid grid-cols-1 justify-items-end">
+                
 
-                <div class="group z-10">
-                    <button id="menu-button" class="block text-white justify-self-end" aria-label="Menu">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 bg-zinc-900 group-focus-within:hidden" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
+                <div class="group relative">
+                    <button id="close-button" class="block text-white bg-zinc-900 fixed top-4 right-4" aria-label="Close">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </a>
                     </button>
-                    <nav class="hidden group-focus-within:block fixed top-16 right-0 bg-zinc-900/80 w-2/3 max-w-xs h-lvh shadow-lg p-4 space-y-4">
+                    <button id="menu-button" class="text-white bg-zinc-900 relative" role="checkbox" aria-label="Menu" area-checked="false" />
+                        <a href="#menu-nav">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </a>
+                    </button>
+                    
+                    <nav id="menu-nav" class="hidden target:block fixed top-16 right-0 bg-zinc-900/80 w-2/3 max-w-xs h-lvh shadow-lg p-4 space-y-4">
                         <?php wp_nav_menu(array(
                             'theme_location' => 'primary',
                             'menu' => 'PageMenu',
@@ -55,7 +61,7 @@
         <?php if (!is_home()) : ?>
             <h2 class="text-6xl font-bold text-center text-orange-400 h-auto sticky top-16 p-4 sm:top-32 bg-zinc-800"><?php the_tags(''); ?></h2>
         <?php endif; ?>
-        <div class="container grid gap-4 divide-dotted divide-neutral-700 divide-y px-4 mx-auto lg:w-4/5 lg:max-w-screen-md">
+        <div class="grid gap-4 divide-dotted divide-neutral-700 divide-y px-4 mx-auto lg:w-4/5 lg:max-w-screen-md">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                 <article <?php post_class(); ?>>
                     <h3 class="text-3xl my-4"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
@@ -96,7 +102,7 @@
     </main>
 
     <footer>
-        <div class="container px-4 text-center mx-auto lg:w-4/5 lg:max-w-screen-md">
+        <div class="px-4 text-center mx-auto lg:w-4/5 lg:max-w-screen-md">
           <div class="grid grid-cols-3 gap-8 content-between">
             <p><a href="https://www.pixiv.net/users/3864757">pixiv</a></p>
             <p><a href="https://x.com/yoshinami8th">X</a></p>
