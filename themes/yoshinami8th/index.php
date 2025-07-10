@@ -27,12 +27,14 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                     </button>
-                    <nav class="hidden group-focus-within:block fixed top-[60px] right-0 bg-zinc-900 w-2/3 max-w-xs h-auto shadow-lg p-4 space-y-4">
+                    <nav class="hidden group-focus-within:block fixed top-16 right-0 bg-zinc-900/80 w-2/3 max-w-xs h-lvh shadow-lg p-4 space-y-4">
                         <?php wp_nav_menu(array(
                             'theme_location' => 'primary',
                             'menu' => 'PageMenu',
                             'container' => '',
-                            'menu_class' => '*:block hover:*:text-orange-400',
+                            'menu_class' => 'grid grid-cols-1 *:mt-[-1px] *:border-y *:border-dotted *:border-orange-400 hover:*:text-orange-400 *:h-16',
+                            'link_before' => '<span class="block h-full pt-5">',
+                            'link_after' => '</span>',
                     )); ?>
                     </nav>
                 </div>
