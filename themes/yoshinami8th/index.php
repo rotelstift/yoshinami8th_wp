@@ -61,7 +61,7 @@
         <?php endif; ?>
         <div class="grid gap-4 grid-cols-1 place-items-center divide-dotted divide-orange-400 divide-y mx-auto lg:w-4/5 lg:max-w-screen-md">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                <article class="w-full">
+                <article class="w-full px-4">
                     <h3 class="text-3xl my-4"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                     <div class="post-thumbnail">
                         <?php if (has_post_thumbnail()) : ?>
