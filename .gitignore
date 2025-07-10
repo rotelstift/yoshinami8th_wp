@@ -2,3 +2,5 @@
 certs
 themes/twenty*
 themes/index.php
+*.zip
+.DS_Store
