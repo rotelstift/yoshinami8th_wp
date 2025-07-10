@@ -33,7 +33,7 @@
                                 'theme_location' => 'primary',
                                 'menu' => 'PageMenu',
                                 'container' => '',
-                                'menu_class' => 'grid grid-cols-1 *:mt-[-1px] *:border-y *:border-dotted *:border-orange-400 hover:*:text-orange-400 *:h-16',
+                                'menu_class' => 'grid grid-cols-1 divide-dotted divide-orange-400 divide-y border-y border-dotted border-orange-400 hover:*:text-orange-400 *:h-16',
                                 'link_before' => '<span class="block h-full pt-5">',
                                 'link_after' => '</span>',
                             )); ?>
