@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(['min-h-screen', 'bg-zinc-800', 'text-white', 'font-sans', 'max-w-screen']); ?>>
+<body <?php body_class(['bg-zinc-800', 'text-white', 'font-sans']); ?>>
 
     <header class="bg-zinc-900 p-4 sticky top-0 z-10 h-16 sm:h-32">
         <div class="mx-auto grid grid-cols-2 sm:grid-cols-1 items-center text-center gap-4 lg:w-4/5 lg:max-w-screen-md">
@@ -17,14 +17,14 @@
             <div class="sm:hidden grid grid-cols-1 justify-items-end">
                 
 
-                <div class="group relative">
+                <div class="relative">
                     <label for="toggle" class="size-8">
-                        <input type="checkbox" id="toggle" class="peer opacity-0" />
+                        <input type="checkbox" id="toggle" class="peer opacity-0 size-6" />
 
-                        <svg xmlns="http://www.w3.org/2000/svg" class="size-6 peer-checked:hidden fixed top-4 right-4" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="size-6 peer-checked:hidden fixed top-4" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="size-6 hidden peer-checked:block fixed top-4 right-4" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="size-6 hidden peer-checked:block fixed top-4" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                         </svg>
 
@@ -59,20 +59,20 @@
         <?php if (!is_home()) : ?>
             <h2 class="text-6xl font-bold text-center text-orange-400 h-auto sticky top-16 p-4 sm:top-32 bg-zinc-800"><?php the_tags(''); ?></h2>
         <?php endif; ?>
-        <div class="grid gap-4 divide-dotted divide-neutral-700 divide-y px-4 mx-auto lg:w-4/5 lg:max-w-screen-md">
+        <div class="grid gap-4 grid-cols-1 place-items-center divide-dotted divide-orange-400 divide-y lg:w-4/5 lg:max-w-screen-md">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                <article <?php post_class(); ?>>
+                <article class="w-screen px-4">
                     <h3 class="text-3xl my-4"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                    <div class="post-thumbnail">
+                    <div class="post-thumbnail justify-items-center">
                         <?php if (has_post_thumbnail()) : ?>
-                        <div class="w-fit max-w-96 mx-auto">
-                            <a href="<?php the_permalink(); ?>">
-                                <?php the_post_thumbnail('medium_large'); ?>
-                            </a>
-                        </div>
+                            <div class="w-3/4 sm:max-w-96">
+                                <a href="<?php the_permalink(); ?>">
+                                    <?php the_post_thumbnail('medium_large'); ?>
+                                </a>
+                            </div>
                         <?php endif; ?>
                     </div>
-                    <div class="post-content mt-6 grid gap-2">
+                    <div class="post-content mt-6 grid gap-2 w-full aspect-video [&_iframe]:w-full">
                         <?php the_content(); ?>
                     </div>
                     <div class="post-meta text-right">
