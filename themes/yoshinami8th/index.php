@@ -10,7 +10,7 @@
 </head>
 <body <?php body_class(['min-h-screen', 'bg-zinc-800', 'text-white', 'font-sans']); ?>>
 
-    <header class="bg-zinc-900 p-4">
+    <header class="bg-zinc-900 p-4 sticky top-0 z-10 h-16 sm:h-32">
         <div class="mx-auto grid grid-cols-2 sm:grid-cols-1 items-center text-center gap-4 lg:w-4/5 lg:max-w-screen-md">
             <h1 class="text-xl font-bold"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
             <!-- mobile menu -->
@@ -49,9 +49,9 @@
         </div>
    </header>
 
-    <main class="flex-grow">
+    <main class="flex-grow relative">
         <?php if (!is_home()) : ?>
-            <h2 class="text-6xl font-bold text-center text-orange-400"><?php the_tags(''); ?></h2>
+            <h2 class="text-6xl font-bold text-center text-orange-400 h-auto sticky top-16 p-4 sm:top-32 bg-zinc-800"><?php the_tags(''); ?></h2>
         <?php endif; ?>
         <div class="container grid gap-4 divide-dotted divide-neutral-700 divide-y px-4 mx-auto lg:w-4/5 lg:max-w-screen-md">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
